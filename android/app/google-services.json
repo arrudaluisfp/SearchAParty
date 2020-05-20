@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "27407256104",
+    "firebase_url": "https://appflutterarruda-51559.firebaseio.com",
+    "project_id": "appflutterarruda-51559",
+    "storage_bucket": "appflutterarruda-51559.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27407256104:android:7a37b856eb5ffa25d5031d",
+        "android_client_info": {
+          "package_name": "arruda.controle.animal.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27407256104-8gbvq26752ksr5fif8hj4csb1ajic865.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "arruda.controle.animal.com",
+            "certificate_hash": "9a4c3f88b6987ea78f6de3d1ea0816341aca4af3"
+          }
+        },
+        {
+          "client_id": "27407256104-jqo6rl3mg96ts80qbidh9fv31f10tp8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn_WntlC-j22Rqxg1aeapb29J5G9yVBkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27407256104-jqo6rl3mg96ts80qbidh9fv31f10tp8s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
