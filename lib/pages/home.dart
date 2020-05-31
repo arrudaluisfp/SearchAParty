@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:com/model/estabelecimento.dart';
+import 'package:com/pages/novo_estabelecimento.dart';
 import 'package:flutter/material.dart';
+import 'package:com/components/menu_inferior.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -92,24 +94,18 @@ class _HomeState extends State<Home> {
       ),
 
 
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.black54.withOpacity(0.3),
-        child: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              IconButton(icon: Icon(Icons.home), onPressed: null, color: Colors.white70),
-              IconButton(icon: Icon(Icons.favorite), onPressed: null, color: Colors.white70),
-              IconButton(icon: Icon(Icons.audiotrack), onPressed: null, color: Colors.white70),
-              IconButton(icon: Icon(Icons.today), onPressed: null, color: Colors.white70),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: MenuInferior(),
 
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add), onPressed: null,
-          backgroundColor: Colors.white.withOpacity(0.3)
+        child: Icon(Icons.add),
+        backgroundColor: Colors.white.withOpacity(0.3),
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(
+                  builder: (context) => NovoEstabelecimento()
+              )
+          );
+        },
       ),
     );
   }
