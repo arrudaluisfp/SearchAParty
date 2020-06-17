@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:com/model/estabelecimento.dart';
 import 'package:com/pages/novo_estabelecimento.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:com/components/menu_inferior.dart';
 
@@ -12,10 +13,22 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   Firestore db = Firestore.instance;
+  String user;
+
+  String _getUser() {
+    FirebaseAuth.instance.currentUser().then((currentUser) => {
+      if (currentUser != "") {
+        user = currentUser.uid,
+      }
+    });
+    print("USER:: "+user);
+    return user;
+  }
 
   _body() {
     return StreamBuilder(
       stream: db.collection("estabelecimentos").snapshots(),
+      //stream: db.collection(_getUser()).document("pets").collection("pets").snapshots(),
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
@@ -49,15 +62,26 @@ class _HomeState extends State<Home> {
 
                     Estabelecimento estabelecimento = Estabelecimento(dados["nome"], dados ["cidade"], dados["foto"]);
 
-                    return ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: NetworkImage(estabelecimento.foto),
-                      ),
-                      title: Text(estabelecimento.nome,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      subtitle: Text(estabelecimento.cidade,
-                        style: TextStyle(color: Colors.white),
+                    return GestureDetector(
+                      onTap: (){
+                        //if(dados["nome"] == ) {
+                          Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) => NovoEstabelecimento()
+                              )
+                          );
+                        //}
+                      },
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: NetworkImage(estabelecimento.foto),
+                        ),
+                        title: Text(estabelecimento.nome,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        subtitle: Text(estabelecimento.cidade,
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     );
                   }
