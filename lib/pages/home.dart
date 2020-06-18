@@ -4,6 +4,9 @@ import 'package:com/pages/novo_estabelecimento.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:com/components/menu_inferior.dart';
+import 'package:com/pages/estabelecimento1.dart';
+import 'package:com/pages/estabelecimento2.dart';
+import 'package:com/pages/estabelecimento3.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -64,13 +67,27 @@ class _HomeState extends State<Home> {
 
                     return GestureDetector(
                       onTap: (){
-                        //if(dados["nome"] == ) {
+                        if(dados["nome"] == "Estabelecimento 1") {
                           Navigator.push(context,
                               MaterialPageRoute(
-                                  builder: (context) => NovoEstabelecimento()
+                                  builder: (context) => Estabelecimento1()
                               )
                           );
-                        //}
+                        }
+                        if(dados["nome"] == "Estabelecimento 2") {
+                          Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) => Estabelecimento2()
+                              )
+                          );
+                        }
+                        if(dados["nome"] == "Estabelecimento 3") {
+                          Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) => Estabelecimento3()
+                              )
+                          );
+                        }
                       },
                       child: ListTile(
                         leading: CircleAvatar(
