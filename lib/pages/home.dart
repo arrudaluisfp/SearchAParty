@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
                     List<DocumentSnapshot> estabelecimentos = querySnapshot.documents.toList();
                     DocumentSnapshot dados = estabelecimentos[index];
 
-                    Estabelecimento estabelecimento = Estabelecimento(dados["nome"], dados ["cidade"], dados["foto"]);
+                    Estabelecimento estabelecimento = Estabelecimento(dados["nome"], dados ["cidade"], dados["foto"], dados["descricao"], dados["telefone"], dados["endereco"], dados["categoria"]);
 
                     return Card(
                       child: Column(
@@ -74,7 +74,7 @@ class _HomeState extends State<Home> {
                             ),
                             title: Text(estabelecimento.nome,
                             ),
-                            subtitle: Text(estabelecimento.cidade,
+                            subtitle: Text(estabelecimento.categoria + ", " + estabelecimento.cidade
                             ),
                           ),
                           Row(
@@ -82,12 +82,31 @@ class _HomeState extends State<Home> {
                             children: <Widget>[
                               OutlineButton(
                                 borderSide: BorderSide(color: Colors.white70),
-                                onPressed: () {Navigator.push(context,
+                                onPressed: () {
+                                  if(dados["id"] == "001") {
+                                    Navigator.push(context,
                                     MaterialPageRoute(
                                     builder: (context) => Estabelecimento1()
-                                  ));},
+                                    )
+                                    );
+                                  }
+                                  if(dados["id"] == "002") {
+                                    Navigator.push(context,
+                                    MaterialPageRoute(
+                                    builder: (context) => Estabelecimento2()
+                                    )
+                                    );
+                                  }
+                                  if(dados["id"] == "003") {
+                                    Navigator.push(context,
+                                    MaterialPageRoute(
+                                    builder: (context) => Estabelecimento3()
+                                    )
+                                    );
+                                    }
+                                  },
                                 child: Text(
-                                  'VER AGENDA DE EVENTOS',
+                                  'VER MAIS INFORMAÇÕES',
                                   style: TextStyle(color: Colors.blue),
                                 ),
                               ),
@@ -130,18 +149,6 @@ class _HomeState extends State<Home> {
             style: TextStyle(fontFamily: 'Oswald', color: Colors.white),
           ),
         ),
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        backgroundColor: Colors.white.withOpacity(0.3),
-        onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(
-                  builder: (context) => NovoEstabelecimento()
-              )
-          );
-        },
       ),
     );
   }
