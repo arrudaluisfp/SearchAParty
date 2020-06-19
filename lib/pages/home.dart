@@ -107,7 +107,7 @@ class _HomeState extends State<Home> {
                                   },
                                 child: Text(
                                   'VER MAIS INFORMAÇÕES',
-                                  style: TextStyle(color: Colors.blue),
+                                  style: TextStyle(color: Colors.black),
                                 ),
                               ),
                             ],
