@@ -63,21 +63,14 @@ class _Estabelecimento2State extends State<Estabelecimento2> {
                         color: Colors.white70.withOpacity(0.8),
                         border: Border.all(
                           color: Colors.black54,
-                          width: 2,
+                          width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(5.0),
-                        child: Text(
-                          querySnapshot["categoria"],
-                          style: TextStyle(color: Colors.black, fontFamily: 'Oswald', fontSize: 15),
-                        ),
                       ),
                     ),
 
                     Container(
-                      margin: EdgeInsets.only(top:10),
+                      margin: EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: Colors.black54,
@@ -87,47 +80,50 @@ class _Estabelecimento2State extends State<Estabelecimento2> {
                         color: Colors.white70.withOpacity(0.8),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: EdgeInsets.all(5.0),
                         child: Text(
                           querySnapshot["descricao"],
-                          style: TextStyle(color: Colors.black, fontFamily: 'Oswald', fontSize: 24),
+                          style: TextStyle(color: Colors.black, fontFamily: 'Oswald', fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top:5),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 1),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Image.asset(
+                                "assets/images/insta.png",
+                                height: 60,
+                                width: 60,
+                              ),
+                              Image.asset(
+                                "assets/images/telefone.png",
+                                height: 60,
+                                width: 60,
+                              ),
+                            ]
                         ),
                       ),
                     ),
 
                     Container(
-                      margin: EdgeInsets.only(top:10),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black54,
-                          width: 5,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                        color: Colors.white70.withOpacity(0.8),
-                      ),
                       child: Padding(
-                        padding: EdgeInsets.all(5.0),
-                        child: Text(
-                          querySnapshot["social"],
-                          style: TextStyle(color: Colors.black, fontFamily: 'Oswald', fontSize: 12),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top:10),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black54,
-                          width: 5,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                        color: Colors.white70.withOpacity(0.8),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(5.0),
-                        child: Text(
-                          querySnapshot["telefone"],
-                          style: TextStyle(color: Colors.black, fontFamily: 'Oswald', fontSize: 12),
+                        padding: EdgeInsets.all(0),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text(
+                                querySnapshot["social"],
+                                style: TextStyle(color: Colors.white, fontFamily: 'Oswald', fontSize: 14),
+                              ),
+                              Text(
+                                querySnapshot["telefone"],
+                                style: TextStyle(color: Colors.white, fontFamily: 'Oswald', fontSize: 14),
+                              ),
+                            ]
                         ),
                       ),
                     ),
@@ -191,7 +187,7 @@ class _Estabelecimento2State extends State<Estabelecimento2> {
       appBar: AppBar(
         backgroundColor: Colors.black54.withOpacity(0.3),
         title: Center(
-          child: Text('ESTABELECIMENTOS',
+          child: Text('Porão Bar e Tabacaria',
             style: TextStyle(fontFamily: 'Oswald', color: Colors.white),
           ),
         ),
