@@ -187,7 +187,7 @@ class _Estabelecimento3State extends State<Estabelecimento3> {
       appBar: AppBar(
         backgroundColor: Colors.black54.withOpacity(0.3),
         title: Center(
-          child: Text('Porão Bar e Tabacaria',
+          child: Text('Veld Club',
             style: TextStyle(fontFamily: 'Oswald', color: Colors.white),
           ),
         ),
